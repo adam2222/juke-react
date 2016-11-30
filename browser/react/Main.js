@@ -87,8 +87,9 @@ class Main extends React.Component {
 
     render() {
       return (
+        <div>
+        <Sidebar />
         <div id="main" className="container-fluid">
-            <Sidebar />
 
         <div className="col-xs-10">
         <h3>Albums</h3>
@@ -122,9 +123,9 @@ class Main extends React.Component {
 
             </div>
           </div>
-          <Footer />
       </div>
-        );
+      <Footer />
+      </div>);
     }
 }
 
