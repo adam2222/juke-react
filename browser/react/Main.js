@@ -87,44 +87,40 @@ class Main extends React.Component {
 
     render() {
       return (
-        <div>
-        <Sidebar />
         <div id="main" className="container-fluid">
+          <Sidebar />
+          <div className="col-xs-10">
+            <h3>Albums</h3>
+            <div className="row">
 
-        <div className="col-xs-10">
-        <h3>Albums</h3>
-        <div className="row">
-
-          <div className="col-xs-4">
-            <a className="thumbnail" href="#">
-              <img src="http://placeholdit.imgix.net/~text?txtsize=33&txt=ALBUMoneIMAGE&w=300&h=300" />
-              <div className="caption">
-                <h5>
-                  <span> {this.state.albums[0].name} </span>
-                  <span> {this.state.albums[0].songs.length} </span>
-                </h5>
-                <small> </small>
+              <div className="col-xs-4">
+                <a className="thumbnail" href="#">
+                  <img src="http://placeholdit.imgix.net/~text?txtsize=33&txt=ALBUMoneIMAGE&w=300&h=300" />
+                  <div className="caption">
+                    <h5>
+                      <span> {this.state.albums[0].name} </span>
+                      <span> {this.state.albums[0].songs.length} </span>
+                    </h5>
+                    <small> </small>
+                  </div>
+                </a>
               </div>
-            </a>
-          </div>
 
-          <div className="col-xs-4">
-            <a className="thumbnail" href="#">
-              <img src="http://placeholdit.imgix.net/~text?txtsize=33&txt=ALBUMoneIMAGE&w=300&h=300" />
-              <div className="caption">
-                <h5>
-                  <span> {this.state.albums[1].name} </span>
-                  <span> {this.state.albums[1].songs.length} </span>
-                </h5>
-                <small> </small>
+              <div className="col-xs-4">
+                <a className="thumbnail" href="#">
+                  <img src="http://placeholdit.imgix.net/~text?txtsize=33&txt=ALBUMoneIMAGE&w=300&h=300" />
+                  <div className="caption">
+                    <h5>
+                      <span> {this.state.albums[1].name} </span>
+                      <span> {this.state.albums[1].songs.length} </span>
+                    </h5>
+                    <small> </small>
+                  </div>
+                </a>
               </div>
-            </a>
-          </div>
-
             </div>
           </div>
-      </div>
-      <Footer />
+          <Footer />
       </div>);
     }
 }
