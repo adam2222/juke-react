@@ -98,26 +98,13 @@ class Main extends React.Component {
                   <img src="http://placeholdit.imgix.net/~text?txtsize=33&txt=ALBUMoneIMAGE&w=300&h=300" />
                   <div className="caption">
                     <h5>
-                      <span> {this.state.albums[0].name} </span>
-                      <span> {this.state.albums[0].songs.length} </span>
+                      <span> {this.state.albums} </span>
                     </h5>
                     <small> </small>
                   </div>
                 </a>
               </div>
 
-              <div className="col-xs-4">
-                <a className="thumbnail" href="#">
-                  <img src="http://placeholdit.imgix.net/~text?txtsize=33&txt=ALBUMoneIMAGE&w=300&h=300" />
-                  <div className="caption">
-                    <h5>
-                      <span> {this.state.albums[1].name} </span>
-                      <span> {this.state.albums[1].songs.length} </span>
-                    </h5>
-                    <small> </small>
-                  </div>
-                </a>
-              </div>
             </div>
           </div>
           <Footer />
