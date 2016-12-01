@@ -1,7 +1,8 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-
+import Album from './Album'
+import axios from 'axios'
 
 // const albums = [{
 //   name: 'Abbey Road',
@@ -82,34 +83,37 @@ class Main extends React.Component {
             audioUrl: 'https://learndotresources.s3.amazonaws.com/workshop/5616dbe5a561920300b10cd7/Dexter_Britain_-_03_-_The_Stars_Are_Out_Interlude.mp3'
           }]
         }]
+        // albums: axios.get('api/albums').then(result => console.log(result.data))
       }
     }
 
-    render() {
-      return (
-        <div id="main" className="container-fluid">
-          <Sidebar />
-          <div className="col-xs-10">
-            <h3>Albums</h3>
-            <div className="row">
-
-              <div className="col-xs-4">
-                <a className="thumbnail" href="#">
-                  <img src="http://placeholdit.imgix.net/~text?txtsize=33&txt=ALBUMoneIMAGE&w=300&h=300" />
-                  <div className="caption">
-                    <h5>
-                      <span> {this.state.albums} </span>
-                    </h5>
-                    <small> </small>
-                  </div>
-                </a>
-              </div>
-
-            </div>
-          </div>
-          <Footer />
-      </div>);
+    componentDidMount(){
+      axios.get('/api/albums')
+        .then((albumsList) => {
+          this.setState({albums: albumsList.data})
+        })
+        .catch(console.error.bind(console))
     }
-}
+
+
+      render(){
+          return (
+            <div id="main" className="container-fluid">
+              <Sidebar />
+              <div className="col-xs-10">
+                <h3>Albums</h3>
+                <div className="row">
+                  {this.state.albums.map((album, index) => {
+                      return (<Album album={album} key={index.toString()} />);
+                    })
+                  }
+                </div>
+              </div>
+              <Footer />
+          </div>
+        );
+      }
+
+  }
 
 export default Main
