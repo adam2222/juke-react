@@ -62,4 +62,3 @@ router.get('/:songId/audio', function (req, res, next) {
     res.sendFile(decodeURIComponent(url.path))
     : res.redirect(req.song.url)
 });
-

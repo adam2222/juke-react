@@ -1,11 +1,10 @@
 import React from 'react';
 
-
+// The following could be a stateless functional component (i.e. not 'Class')
 class Footer extends React.Component {
     constructor(props) {
       super(props);
     }
-
     render() {
       return (
         <footer>
